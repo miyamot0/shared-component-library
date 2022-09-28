@@ -1,5 +1,9 @@
 {
-  "name": "shared-component-library",
+  "name": "@miyamot0/shared-component-library",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "version": "0.1.0",
   "description": "A collection of shared common components",
   "main": "dist/cjs/index.js",
@@ -60,7 +64,8 @@
   },
   "scripts": {
     "lint": "eslint --ext .ts,.tsx .",
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "upload": "npm publish --access public --ignore-scripts --@miyamot0:registry='https://registry.npmjs.org'"
   },
   "eslintConfig": {
     "extends": [
