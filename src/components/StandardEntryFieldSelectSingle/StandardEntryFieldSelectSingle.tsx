@@ -7,8 +7,9 @@
  */
 
 import React from "react";
-import Select from "react-select";
+import Select, { SingleValue } from "react-select";
 import { SelectFieldEntryProps } from "../../interfaces/ComponentInterfaces";
+import { SingleOptionType } from "../../types/SharedComponentTypes";
 import './../../styles/styles.css'
 
 /** StandardEntryFieldSelectSingle
@@ -30,7 +31,7 @@ export default function StandardEntryFieldSelectSingle({ label, options, current
                 name={"single-field"}
                 inputId={"single-field"}
                 options={options}
-                onChange={(option) => {
+                onChange={(option: SingleValue<SingleOptionType>) => {
                     dispatch({
                         type: type,
                         payload: option,

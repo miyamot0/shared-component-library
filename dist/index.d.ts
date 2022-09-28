@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { MultiValue } from 'react-select';
+import { MultiValue, SingleValue } from 'react-select';
 
 /** @license
  *
@@ -21,7 +21,7 @@ declare type SingleOptionType = {
  * LICENSE file in the root directory of this source tree.
  */
 
-declare type DispatchPayloads = MultiValue<SingleOptionType> | SingleOptionType | string;
+declare type DispatchPayloads = MultiValue<SingleOptionType> | SingleValue<SingleOptionType> | string;
 declare type DispatchType = ({ type, payload }: {
     type: number;
     payload: DispatchPayloads;

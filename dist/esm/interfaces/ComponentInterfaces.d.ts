@@ -5,9 +5,9 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { MultiValue } from "react-select";
+import { MultiValue, SingleValue } from "react-select";
 import { SingleOptionType } from "../types/SharedComponentTypes";
-export declare type DispatchPayloads = MultiValue<SingleOptionType> | SingleOptionType | string;
+export declare type DispatchPayloads = MultiValue<SingleOptionType> | SingleValue<SingleOptionType> | string;
 export declare type DispatchType = ({ type, payload }: {
     type: number;
     payload: DispatchPayloads;

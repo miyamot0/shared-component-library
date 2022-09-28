@@ -5,7 +5,7 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationDir": "types",
-    "sourceMap": true,
+    "sourceMap": false,
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -16,6 +16,6 @@
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*.tsx"],
   "exclude": ["node_modules"]
 }

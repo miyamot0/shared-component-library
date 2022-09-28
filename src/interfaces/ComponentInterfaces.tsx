@@ -6,11 +6,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { MultiValue } from "react-select";
+import { MultiValue, SingleValue } from "react-select";
 import { SingleOptionType } from "../types/SharedComponentTypes";
 
 export type DispatchPayloads = MultiValue<SingleOptionType> |
-    SingleOptionType |
+    SingleValue<SingleOptionType> |
     string;
 
 export type DispatchType = ({ type, payload }: {
