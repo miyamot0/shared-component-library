@@ -1,4 +1,6 @@
 /// <reference types="react" />
+import { MultiValue } from 'react-select';
+
 /** @license
  *
  * Copyright (c) Shawn P. Gilroy, Louisiana State University.
@@ -6,18 +8,43 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+declare type SingleOptionType = {
+    label: string;
+    value: string;
+};
+
+/** @license
+ *
+ * Copyright (c) Shawn P. Gilroy, Louisiana State University.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+declare type DispatchPayloads = MultiValue<SingleOptionType> | SingleOptionType | string;
+declare type DispatchType = ({ type, payload }: {
+    type: number;
+    payload: DispatchPayloads;
+}) => void;
 interface StandardFieldEntryProps {
     label: string | undefined;
     currentValue: string | undefined;
     type: number;
-    dispatch: any;
+    dispatch: DispatchType;
 }
 interface SelectFieldEntryProps {
     label: string | undefined;
-    options: any[];
-    currentValue: string | undefined;
+    options: SingleOptionType[];
+    currentValue: SingleOptionType | undefined;
     type: number;
-    dispatch: any;
+    dispatch: DispatchType;
+}
+interface MultipleSelectFieldEntryProps {
+    label: string | undefined;
+    options: SingleOptionType[];
+    currentValue: MultiValue<SingleOptionType> | undefined;
+    type: number;
+    dispatch: DispatchType;
 }
 interface NumericFieldEntryProps {
     label: string | undefined;
@@ -25,7 +52,7 @@ interface NumericFieldEntryProps {
     min?: string | undefined;
     max?: string | undefined;
     type: number;
-    dispatch: any;
+    dispatch: DispatchType;
 }
 
 /** @license
@@ -150,7 +177,7 @@ declare function StandardEntryFieldTextArea({ label, currentValue, type, dispatc
 
  * @param {string} label value to display
  * @param {any[]} options options to display
- * @param {string | undefined} currentValue value to display
+ * @param {SingleOptionType | undefined} currentValue value to display
  * @param {number} type enum related to dispatch/reducer
  * @param {function} dispatch dispatch callback
  * @returns {JSX.Element}
@@ -167,13 +194,13 @@ declare function StandardEntryFieldSelectSingle({ label, options, currentValue, 
 
 /** StandardEntryFieldSelectMultiple
 
- * @param {string} label value to display
+ * @param {SingleOptionType} label value to display
  * @param {any[]} options options to display
- * @param {string | undefined} currentValue value to display
+ * @param {SingleOptionType | undefined} currentValue value to display
  * @param {number} type enum related to dispatch/reducer
  * @param {function} dispatch dispatch callback
  * @returns {JSX.Element}
  */
-declare function StandardEntryFieldSelectMultiple({ label, options, currentValue, type, dispatch }: SelectFieldEntryProps): JSX.Element;
+declare function StandardEntryFieldSelectMultiple({ label, options, currentValue, type, dispatch }: MultipleSelectFieldEntryProps): JSX.Element;
 
 export { StandardEntryFieldDate, StandardEntryFieldEmail, StandardEntryFieldNumber, StandardEntryFieldPassword, StandardEntryFieldSelectMultiple, StandardEntryFieldSelectSingle, StandardEntryFieldText, StandardEntryFieldTextArea };
