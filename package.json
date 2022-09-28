@@ -1,7 +1,7 @@
 {
   "name": "@miyamot0/shared-component-library",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
+    "registry": "https://npm.pkg.github.com/miyamot0",
     "access": "public"
   },
   "version": "0.1.0",
