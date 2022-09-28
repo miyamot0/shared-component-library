@@ -4,6 +4,10 @@
     "registry": "https://npm.pkg.github.com/miyamot0",
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miyamot0/shared-component-library.git"
+  },
   "version": "0.1.1",
   "description": "A collection of shared common components",
   "main": "dist/cjs/index.js",
