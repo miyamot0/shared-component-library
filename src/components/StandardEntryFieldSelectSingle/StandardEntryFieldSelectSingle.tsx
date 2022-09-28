@@ -15,7 +15,7 @@ import './../../styles/styles.css'
 
  * @param {string} label value to display
  * @param {any[]} options options to display
- * @param {string | undefined} currentValue value to display
+ * @param {SingleOptionType | undefined} currentValue value to display
  * @param {number} type enum related to dispatch/reducer
  * @param {function} dispatch dispatch callback
  * @returns {JSX.Element}
