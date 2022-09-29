@@ -9,13 +9,13 @@
 import { MultiValue, SingleValue } from "react-select";
 import { SingleOptionType } from "../types/SharedComponentTypes";
 
-export type DispatchPayloads = MultiValue<SingleOptionType> |
-    SingleValue<SingleOptionType> |
-    string;
+//export type DispatchPayloads = MultiValue<SingleOptionType> |
+//    SingleValue<SingleOptionType> |
+//    string;
 
 export type DispatchType = ({ type, payload }: {
     type: number;
-    payload: DispatchPayloads;
+    payload: string | undefined | null | SingleOptionType | SingleValue<SingleOptionType> | MultiValue<SingleOptionType>;
 }) => void
 
 export interface StandardFieldEntryProps {
